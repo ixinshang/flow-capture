@@ -8,7 +8,7 @@ This script is intended to be a drop-in replacement for the flow-capture distrib
 * Also compile and install sflowtool from http://www.inmon.com/technology/sflowTools.php
 * Ensure tcpdump is installed
 * Replace /etc/init.d/flow-capture with this file
-* When setting up your listeners, use a UNIQUE port for EVERY listener (probably something between 61001 and 65535 is best)
+* When setting up your listeners, use a UNIQUE port for EVERY listener. One suggestion would be to use ports between 61001 and 65535 as they are within the IANA range for private/ephemeral ports, but above the range most OSes use for their ephemeral ports.
 
 ##How it works
 Using the method outlined in [Forwarding using sflowtool](http://blog.sflow.com/2012/01/forwarding-using-sflowtool.html), packets from individual agents are captured using tcpdump and then redirected to specific flow-capture netflow sources listening on specifc ports.
